@@ -9,5 +9,8 @@ public interface BMovimientoService {
 
     Uni<List<BMovimiento>> buscarXCelular(String celular);
 
-    Uni<BMovimiento> save(String celular, Double monto, String descripcion);
+    Uni<BMovimiento> save(String celular,
+                          Double monto,
+                          String descripcion,
+                          String nombreRazonSocial);
 }

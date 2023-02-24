@@ -27,8 +27,9 @@ public class BMovimientoResource {
     @Transactional
     public Uni<BMovimiento> save(@QueryParam("celular") String celular,
                                  @QueryParam("monto") Double monto,
-                                 @QueryParam("descripcion") String descripcion) {
-        return bMovimientoService.save(celular, monto, descripcion);
+                                 @QueryParam("descripcion") String descripcion,
+                                 @QueryParam("nombreRazonSocial") String nombreRazonSocial) {
+        return bMovimientoService.save(celular, monto, descripcion, nombreRazonSocial);
     }
 
 }

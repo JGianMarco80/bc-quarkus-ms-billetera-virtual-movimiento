@@ -30,13 +30,14 @@ public class BMovimientoServiceImpl implements BMovimientoService {
     }
 
     @Override
-    public Uni<BMovimiento> save(String celular, Double monto, String descripcion) {
+    public Uni<BMovimiento> save(String celular, Double monto, String descripcion, String nombreRazonSocial) {
         return Uni.createFrom().item(new BMovimiento())
                 .onItem()
                 .transform(bMovimiento -> {
                     bMovimiento.setCelular(celular);
                     bMovimiento.setMonto(monto);
                     bMovimiento.setDescripcion(descripcion);
+                    bMovimiento.setNombreRazonSocial(nombreRazonSocial);
                     bMovimiento.setFecha(LocalDate.now());
                     return bMovimiento;
                 })
